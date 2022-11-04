@@ -12,7 +12,7 @@ read_local_sha <- function(path) {
     path,
     quote = "\"",
     comment.char = "",
-    col.names = c("sha265", "path")
+    col.names = c("sha256", "path")
   )
   shas
 }
