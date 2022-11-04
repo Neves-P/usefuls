@@ -15,7 +15,7 @@ convert_sha_base64 <- function(sha256) {
   if (.Platform$OS.type == "unix") {
     command <- paste0("echo", sha256, " | xxd -r -p | base64")
     converted_sha <- system(command)
-    testit::assert(lenght(converted_sha) >= 1 && is.character(converted_sha))
+    testit::assert(length(converted_sha) >= 1 && is.character(converted_sha))
     converted_sha
   } else {
     stop("This function requires a Unix-like system to run.")
