@@ -14,7 +14,7 @@
 convert_sha_base64 <- function(sha256) {
   if (.Platform$OS.type == "unix") {
     command <- paste0("echo ", sha256, " | xxd -r -p | base64")
-    converted_sha <- system(command)
+    converted_sha <- system(command, intern = TRUE)
     testit::assert(length(converted_sha) >= 1 && is.character(converted_sha))
     converted_sha
   } else {
