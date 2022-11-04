@@ -8,12 +8,11 @@
 #'
 #' @examples
 read_local_sha <- function(path) {
-  path <- choose.files()
   shas <- read.table(
     path,
     quote = "\"",
     comment.char = "",
     col.names = c("sha265", "path")
   )
-
+  shas
 }
